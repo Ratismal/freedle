@@ -34,5 +34,3 @@ export default {
   components: { GameApp, AppHeader, GameSettings, GameManager, GameToaster, GameInfo, GameKeyboard, GameStats }
 };
 </script>
-,
-    GameKeyboard
