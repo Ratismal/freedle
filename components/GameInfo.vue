@@ -22,6 +22,13 @@
         I'm making this for myself. You're welcome to use it too. Have fun.
       </p>
 
+      <p>To restore your statistics from Wordle, copy the "statistics" localStorage property, and run this on Freedle:</p>
+      <pre><code>const state = JSON.parse(localStorage.getItem('vuex'))
+const stats = { /* PASTE YOUR WORDLE STATISTICS OBJECT HERE */ }
+
+state.statistics = { ...stats, lastScore: 0, lastGame: Date.now() }
+localStorage.setItem('vuex', JSON.stringify(state))</code></pre>
+
       <h2>Have an issue?</h2>
 
       <p>
@@ -75,6 +82,6 @@ export default {
 
 <style scoped lang="scss">
 .modal-contents {
-  height: 550px !important;
+  height: 700px !important;
 }
 </style>
