@@ -132,7 +132,6 @@ export default {
       this.setWord({ word, day: today });
     },
     getTodaysWord (day) {
-      console.log(day);
       switch (this.gameMode) {
         case 'wordle':
           return words[day];

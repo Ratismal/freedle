@@ -108,6 +108,5 @@ export default function getSfx (name) {
   }
 
   const index = Math.floor(Math.random() * registry.length);
-  console.log(index);
   return registry[index];
 }

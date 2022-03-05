@@ -35,7 +35,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$store.state.settings.firstTime);
     if (this.$store.state.settings.firstTime !== false) {
       setTimeout(() => {
         this.$root.$emit('open:info');
@@ -64,7 +63,6 @@ export default {
       if (event.shiftKey || event.ctrlKey || event.altKey) {
         return;
       }
-      // console.log(event);
       if (this.keysDown[event.key] && /^(Enter|Backspace|[a-z])$/i.test(event.key)) {
         event.preventDefault();
         return false;

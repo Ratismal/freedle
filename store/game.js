@@ -81,13 +81,11 @@ export const actions = {
     if (words.includes(word) || dumbWords.includes(word)) {
       const cLetters = game.word.split('');
       if (rootState.settings.settings.hardMode) {
-        console.log('checking hardmode...');
         for (let i = 0; i < game.currentRow; i++) {
           const c = [...letters];
           for (let j = 0; j < 5; j++) {
             let letter = null;
             const guess = game.rows[i][j];
-            console.log({ ...guess }, c[j], c);
             if (guess.score === 'correct') {
               if (c[j] === guess.guess) {
                 c[j] = '';
@@ -150,7 +148,6 @@ export const mutations = {
       game.currentRow = 0;
       game.day = day;
     }
-    console.log('set word:', word);
   },
   setTile (state, { column, guess }) {
     const game = state[state.gameMode];
