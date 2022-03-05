@@ -10,18 +10,23 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'freedle',
+    title: 'Freedle - A free daily word game',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'A recreation of the game where you guess the hidden word in 6 tries. A new puzzle is available each day. Completely in sync with Wordle, but with new features.' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { property: 'og:url', content: 'https://freedle.stupidcat.me' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Freedle - A free daily word game' },
+      { property: 'og:description', content: 'A recreation of the game where you guess the hidden word in 6 tries. A new puzzle is available each day. Completely in sync with Wordle, but with new features.' },
+      { property: 'twitter:domain', content: 'freedle.stupidcat.me' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: '/animations.css' }
     ],
     script: [
