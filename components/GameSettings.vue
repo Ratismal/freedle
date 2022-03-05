@@ -11,7 +11,7 @@
     <div class="settings-wrapper">
       <div class="settings-group">
         <div>
-          <span class="title">Hard Mode (NYI)</span>
+          <span class="title">Hard Mode</span>
           <span class="subtitle">Any revealed hints must be used in subsequent guesses</span>
         </div>
         <label>
