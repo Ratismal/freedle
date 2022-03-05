@@ -47,5 +47,6 @@ export default {
   left: 0;
   right: 0;
   gap: 10px;
+  z-index: 500;
 }
 </style>

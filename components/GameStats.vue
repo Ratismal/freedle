@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import { colors, darkSquare, lightSquare } from '@/assets/constants';
 
@@ -91,6 +91,9 @@ export default {
     this.$root.$off('open:stats', this.boundOpenListener);
   },
   methods: {
+    ...mapActions({
+      addToast: 'game/addToast'
+    }),
     openListener () {
       this.active = !this.active;
     },
@@ -139,6 +142,10 @@ export default {
       }
 
       navigator.clipboard.writeText(results.join('\n'));
+
+      this.addToast({
+        text: 'Copied results to clipboard'
+      });
     }
   }
 };
