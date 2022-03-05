@@ -1,0 +1,65 @@
+
+:root {
+  --flip-duration: 250ms;
+  --flip-transform-appear: rotate3d(1, 0, 0, 90deg);
+  --flip-transform-disappear: rotate3d(1, 0, 0, -90deg);
+  --throb-duration: 100ms;
+  --throb-scale: 1.1;
+
+  --color-background: #121213;
+  --color-text: white;
+  --color-border-empty: #3a3a3c;
+  --color-border-filled: #565758;
+  --color-text-pre-guess: white;
+  --color-text-post-guess: white;
+  --color-empty: #121213;
+  --color-absent: #3A3A3C;
+  --color-present: #B59F3B;
+  --color-correct: #538D4E;
+  --color-key: #818384;
+}
+
+.light {
+  --color-background: white;
+  --color-text: black;
+  --color-border-empty: #d3d6da;
+  --color-border-filled: #878a8c;
+  --color-text-pre-guess: black;
+  --color-text-post-guess: white;
+  --color-empty: white;
+  --color-absent: #787c7e;
+  --color-present: #c9b458;
+  --color-correct: #6aaa64;
+}
+
+$colors: (
+  'green': (#538D4E, #6aaa64),
+  'blue': (#78b0e4 #85c0f9),
+  'brown': (#8d513e #a86753),
+  'orange': (#e67136 #f5793a),
+  'purple': (#967bc2 #a486d4),
+  'red': (#c05361 #d65e6e),
+  'yellow': (#B59F3B #c9b458),
+);
+
+@each $name, $cs in $colors {
+  $dark: nth($cs, 1);
+  $light: nth($cs, 2);
+  .present-#{$name} {
+    --color-present: #{$dark};
+  }
+  .correct-#{$name} {
+    --color-correct: #{$dark};
+  }
+  .light.present-#{$name} {
+    --color-present: #{$light};
+  }
+  .light.correct-#{$name} {
+    --color-correct: #{$light};
+  }
+}
+
+.megathrob {
+  --throb-duration: 2s;
+  --throb-scale: 1.5;
+}
