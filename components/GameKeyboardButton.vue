@@ -28,25 +28,25 @@ export default {
       return this.button.toLowerCase();
     },
     state () {
-      let present = false;
+      let state = 'idle';
       for (const row of this.game.rows) {
         for (const guess of row) {
           if (guess.guess === this.lowered) {
             switch (guess.score) {
               case 'absent':
-                return 'absent';
+                if (state !== 'present') {
+                  state = 'absent';
+                }
+                break;
               case 'correct':
                 return 'correct';
               case 'present':
-                present = true;
+                state = 'present';
             }
           }
         }
       }
-      if (present) {
-        return 'present';
-      }
-      return 'idle';
+      return state;
     },
     className () {
       return {

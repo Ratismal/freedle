@@ -45,7 +45,6 @@ export default {
 header {
   height: 51px;
   border-bottom: 1px solid var(--color-border-filled);
-  margin-bottom: 100px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;

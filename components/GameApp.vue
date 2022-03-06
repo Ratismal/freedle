@@ -1,14 +1,16 @@
 <template>
-  <div class="game">
-    <game-row :row="0" />
-    <game-row :row="1" />
-    <game-row :row="2" />
-    <game-row :row="3" />
-    <game-row :row="4" />
-    <game-row :row="5" />
-    <button v-if="dev" class="button" @click.prevent="reset">
-      Reset Today's Wordle
-    </button>
+  <div class="game-wrapper">
+    <div class="game">
+      <game-row :row="0" />
+      <game-row :row="1" />
+      <game-row :row="2" />
+      <game-row :row="3" />
+      <game-row :row="4" />
+      <game-row :row="5" />
+      <button v-if="dev" class="button" @click.prevent="reset">
+        Reset Today's Wordle
+      </button>
+    </div>
   </div>
 </template>
 
@@ -88,8 +90,20 @@ export default {
   box-sizing: border-box;
 }
 
+.game-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .game {
-  width: 330px;
+  max-width: 350px;
+  max-height: 420px;
+  height: 100%;
+  width: 100%;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
 }
 </style>

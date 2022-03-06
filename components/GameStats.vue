@@ -153,7 +153,7 @@ export default {
 
 <style scoped lang="scss">
 .modal-contents {
-  height: 475px !important;
+  height: 500px !important;
 }
 h1 {
   text-align: center;
@@ -186,7 +186,7 @@ h1 {
   display: grid;
   grid-template-columns: 10px 1fr;
   grid-gap: 5px;
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
   align-items: center;
 

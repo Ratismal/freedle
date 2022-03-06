@@ -94,8 +94,7 @@ export default {
 
 <style scoped>
 .tile {
-  width: 62px;
-  height: 62px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

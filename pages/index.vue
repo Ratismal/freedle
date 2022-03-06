@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <AppHeader />
     <game-toaster />
     <game-app />

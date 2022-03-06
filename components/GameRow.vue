@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .game-row {
   display: grid;
-  grid-template-columns: repeat(5, 62px);
+  grid-template-columns: repeat(5, 1fr);
   gap: 5px;
   margin-bottom: 5px;
 }
