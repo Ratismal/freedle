@@ -82,6 +82,6 @@ export default {
 
 <style scoped lang="scss">
 .modal-contents {
-  height: 700px !important;
+  height: 500px !important;
 }
 </style>
