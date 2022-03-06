@@ -181,9 +181,10 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   z-index: 20;
+  padding: 10px;
 
   position: fixed;
   background: var(--color-background);
