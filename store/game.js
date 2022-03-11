@@ -114,10 +114,13 @@ export const actions = {
         if (letters[i] === cLetters[i]) {
           cLetters[i] = '';
           commit('setTileScore', { column: i, score: 'correct' });
-        } else if (cLetters.includes(letters[i])) {
+        }
+      }
+      for (let i = 0; i < 5; i++) {
+        if (cLetters.includes(letters[i])) {
           cLetters[cLetters.indexOf(letters[i])] = '';
           commit('setTileScore', { column: i, score: 'present' });
-        } else {
+        } else if (cLetters[i] !== '') {
           commit('setTileScore', { column: i, score: 'absent' });
         }
       }

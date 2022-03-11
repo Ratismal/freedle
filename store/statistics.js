@@ -27,9 +27,14 @@ export const actions = {
 export const mutations = {
   addGame (state, score) {
     state.guesses[score + 1]++;
-    state.lastScore = score + 1;
 
     const win = score !== 'fail';
+
+    if (win) {
+      state.lastScore = score + 1;
+    } else {
+      state.lastScore = 'X';
+    }
 
     const lastGame = dayjs(state.lastGame).startOf('day');
     const today = dayjs().startOf('day');

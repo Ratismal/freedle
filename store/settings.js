@@ -7,7 +7,8 @@ export const state = () => ({
     hardMode: false,
     golf: false,
     niceCock: false,
-    mentionFreedle: true
+    mentionFreedle: true,
+    invertResultsTheme: false
   },
   firstTime: true
 });

@@ -84,7 +84,7 @@ export default {
     }
   },
   mounted () {
-    this.boundOpenListener = this.openListener.bind(this);
+    this.boundOpenListener = this.openListener.bind(this, true);
     this.$root.$on('open:stats', this.boundOpenListener);
   },
   destroyed () {
@@ -94,8 +94,8 @@ export default {
     ...mapActions({
       addToast: 'game/addToast'
     }),
-    openListener () {
-      this.active = !this.active;
+    openListener (active) {
+      this.active = typeof active === 'boolean' ? active : !this.active;
     },
     getWidth (score) {
       const times = this.stats.guesses[score];
@@ -111,7 +111,10 @@ export default {
     copyResults () {
       const present = colors[this.settings.presentColor];
       const correct = colors[this.settings.correctColor];
-      const absent = this.settings.lightTheme ? lightSquare : darkSquare;
+      let absent = this.settings.lightTheme ? lightSquare : darkSquare;
+      if (this.settings.invertResultsTheme) {
+        absent = absent === lightSquare ? darkSquare : lightSquare;
+      }
       const day = this.game.day;
 
       const results = [];

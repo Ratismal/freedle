@@ -92,6 +92,16 @@
           <div class="toggle-wrapper"><span class="selector" /></div>
         </label>
       </div>
+      <div class="settings-group">
+        <div>
+          <span class="title">Invert Results Theme</span>
+          <span class="subtitle">When copying results, gives you black squares when on light theme, and vice&nbsp;versa</span>
+        </div>
+        <label>
+          <input v-model="settings.invertResultsTheme" class="input" type="checkbox">
+          <div class="toggle-wrapper"><span class="selector" /></div>
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -183,7 +193,7 @@ export default {
   right: 0;
   max-width: 500px;
   margin: 0 auto;
-  z-index: 20;
+  z-index: 600;
   padding: 10px;
 
   position: fixed;
