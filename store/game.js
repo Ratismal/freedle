@@ -110,17 +110,20 @@ export const actions = {
           }
         }
       }
+      const gradedPositions = [false, false, false, false, false];
       for (let i = 0; i < 5; i++) {
         if (letters[i] === cLetters[i]) {
           cLetters[i] = '';
           commit('setTileScore', { column: i, score: 'correct' });
+          gradedPositions[i] = true;
         }
       }
       for (let i = 0; i < 5; i++) {
         if (cLetters.includes(letters[i])) {
           cLetters[cLetters.indexOf(letters[i])] = '';
           commit('setTileScore', { column: i, score: 'present' });
-        } else if (cLetters[i] !== '') {
+          gradedPositions[i] = true;
+        } else if (!gradedPositions[i]) {
           commit('setTileScore', { column: i, score: 'absent' });
         }
       }
