@@ -8,7 +8,8 @@ export const state = () => ({
     golf: false,
     niceCock: false,
     mentionFreedle: true,
-    invertResultsTheme: false
+    invertResultsTheme: false,
+    flipStyle: 'default'
   },
   firstTime: true
 });

@@ -2,7 +2,9 @@
 :root {
   --flip-duration: 250ms;
   --flip-transform-appear: rotate3d(1, 0, 0, 90deg);
+  --flip-opacity-appear: 1;
   --flip-transform-disappear: rotate3d(1, 0, 0, -90deg);
+  --flip-opacity-disappear: 1;
   --throb-duration: 100ms;
   --throb-scale: 1.1;
 
@@ -65,4 +67,53 @@ $colors: (
 .megathrob {
   --throb-duration: 2s;
   --throb-scale: 1.5;
+}
+
+.flip-sideways {
+  --flip-transform-appear: rotate3d(0, 1, 0, 90deg);
+  --flip-transform-disappear: rotate3d(0, 1, 0, -90deg);
+}
+
+.flip-diagonal {
+  --flip-transform-appear: rotate3d(1, 1, 0, 90deg);
+  --flip-transform-disappear: rotate3d(1, 1, 0, -90deg);
+}
+
+.flip-rotate {
+  --flip-transform-appear: rotate3d(0, 0, 1, 90deg);
+  --flip-transform-disappear: rotate3d(0, 0, 1, -90deg);
+}
+
+.flip-shrink {
+  --flip-transform-appear: scale3d(0, 0, 1);
+  --flip-transform-disappear: scale3d(0, 0, 1);
+}
+
+.flip-zoom {
+  --flip-transform-appear: translateY(400px);
+  --flip-transform-disappear: translateY(-400px);
+  --flip-opacity-disappear: 0;
+  --flip-opacity-appear: 0;
+}
+
+.flip-fade {
+  --flip-transform-appear: translateY(0);
+  --flip-transform-disappear: translateY(0);
+  --flip-opacity-disappear: 0;
+  --flip-opacity-appear: 0;
+}
+
+.flip-warp {
+  --flip-transform-appear: scale3d(0, 50, 0);
+  --flip-transform-disappear: scale3d(0, 50, 0);
+}
+
+.flip-bounce {
+  --flip-transform-appear: rotate3d(0, 0, 1, 45deg) scale3d(8, 8, 1) translateY(8px) translateX(40px);
+  --flip-transform-disappear: rotate3d(0, 0, 1, 45deg) scale3d(8, 8, 1) translateY(8px) translateX(40px);
+}
+
+.flip-crazy {
+  --flip-transform-appear: rotate3d(1, 1, 1, 180deg) perspective(0);
+  --flip-transform-disappear: rotate3d(1, 1, 1, -180deg) perspective(0);
 }

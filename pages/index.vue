@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import '@/assets/variables.scss';
 import '@/assets/main.scss';
 
 import dayjs from 'dayjs';

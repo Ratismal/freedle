@@ -1,21 +1,24 @@
 
 @keyframes disappear {
   from {
-    transform: rotate3d(0);
+    transform: rotate3d(0) scale3d(1, 1, 1);
+    opacity: 1;
   }
 
   to {
     transform: var(--flip-transform-disappear);
+    opacity: var(--flip-opacity-disappear);
   }
 }
 
 @keyframes appear {
   from {
     transform: var(--flip-transform-appear);
+    opacity: var(--flip-opacity-appear);
   }
 
   to {
-    transform: rotate3d(0);
+    transform: rotate3d(0) scale3d(1, 1, 1);
   }
 }
 

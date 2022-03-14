@@ -76,6 +76,16 @@
       </div>
       <div class="settings-group">
         <div>
+          <span class="title">Flip Style</span>
+        </div>
+        <select v-model="settings.flipStyle">
+          <option v-for="style, key in flipStyles" :key="key" :value="key">
+            {{ style }}
+          </option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <div>
           <span class="title">Golf Mode</span>
         </div>
         <label>
@@ -116,6 +126,18 @@ export default {
     return {
       settings: {
         ...this.$store.state.settings.settings
+      },
+      flipStyles: {
+        default: 'Default',
+        sideways: 'Sideways',
+        diagonal: 'Diagonal',
+        rotate: 'Rotate',
+        fade: 'Fade',
+        shrink: 'Shrink',
+        bounce: 'Bounce',
+        warp: 'Warp',
+        zoom: 'Zoom',
+        crazy: 'Crazy'
       },
       colors,
       active: false,
@@ -172,6 +194,10 @@ export default {
       }
       if (this.settings.correctColor !== 'green') {
         classes.push('correct-' + this.settings.correctColor);
+      }
+
+      if (this.settings.flipStyle) {
+        classes.push('flip-' + this.settings.flipStyle);
       }
 
       localStorage.setItem('theme', classes.join(' '));
