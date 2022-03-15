@@ -22,7 +22,10 @@
         I'm making this for myself. You're welcome to use it too. Have fun.
       </p>
 
-      <p>To restore your statistics from Wordle, ctrl+click on the stats button to open the importer.</p>
+      <p>To restore your statistics from Wordle, click this button:</p>
+      <button class="button correct" @click.prevent="openImporter">
+        Open Importer
+      </button>
 
       <h2>Have an issue?</h2>
 
@@ -70,6 +73,10 @@ export default {
   methods: {
     openListener () {
       this.active = !this.active;
+    },
+    openImporter () {
+      this.active = false;
+      this.$root.$emit('open:stats-importer');
     }
   }
 };
