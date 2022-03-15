@@ -8,6 +8,7 @@
     <game-info />
     <game-keyboard />
     <game-stats />
+    <stats-importer />
   </div>
 </template>
 
@@ -25,11 +26,14 @@ import GameToaster from '../components/GameToaster.vue';
 import GameInfo from '../components/GameInfo.vue';
 import GameKeyboard from '../components/GameKeyboard.vue';
 import GameStats from '../components/GameStats.vue';
+import StatsImporter from '../components/StatsImporter.vue';
 
 dayjs.extend(duration);
 
 export default {
   name: 'IndexPage',
-  components: { GameApp, AppHeader, GameSettings, GameManager, GameToaster, GameInfo, GameKeyboard, GameStats }
+  components: { GameApp, AppHeader, GameSettings, GameManager, GameToaster, GameInfo, GameKeyboard, GameStats, StatsImporter }
 };
 </script>
+,
+    StatsImporter

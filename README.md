@@ -19,16 +19,7 @@
   I'm making this for myself. You're welcome to use it too. Have fun.
 </p>
 
-To restore your statistics from Wordle, copy the "statistics" localStorage property, and run this on Freedle:
-```js
-const state = JSON.parse(localStorage.getItem('vuex'))
-const stats = { /* PASTE YOUR WORDLE STATISTICS OBJECT HERE */ }
-
-state.statistics = { ...stats, lastScore: 0, lastGame: Date.now() }
-localStorage.setItem('vuex', JSON.stringify(state))
-```
-Ex.
-![](https://media.discordapp.net/attachments/854897011198918656/949527380551139418/2022-03-04_21-42-44_vivaldi.png)
+To restore your statistics from Wordle, ctrl+click on the stats button to open the importer.
 
 <h2>Have an issue?</h2>
 

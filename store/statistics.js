@@ -21,6 +21,9 @@ export const state = () => ({
 export const actions = {
   addGame ({ commit }, score) {
     commit('addGame', score);
+  },
+  importStats ({ commit }, stats) {
+    commit('importStats', stats);
   }
 };
 
@@ -56,6 +59,15 @@ export const mutations = {
     }
 
     state.lastGame = Date.now();
+  },
+  importStats (state, stats) {
+    state.gamesPlayed = stats.gamesPlayed;
+    state.gamesWon = stats.gamesWon;
+    state.currentStreak = stats.currentStreak;
+    state.maxStreak = stats.maxStreak;
+    state.guesses = { ...stats.guesses };
+    state.lastScore = 0;
+    state.lastGame = 0;
   }
 };
 

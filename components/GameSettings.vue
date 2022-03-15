@@ -225,6 +225,8 @@ export default {
   position: fixed;
   background: var(--color-background);
 
+  overflow-y: auto;
+
   &:not(.active) {
     display: none;
   }

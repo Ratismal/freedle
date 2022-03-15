@@ -75,11 +75,12 @@ label {
   }
 }
 
-select {
+textarea, select {
   height: 40px;
   background: var(--color-background);
   color: var(--color-text);
   border-radius: 10px;
+  resize: none;
 }
 
 .button {
@@ -143,4 +144,8 @@ select {
 
 a {
   color: var(--color-correct);
+}
+
+.full {
+  width: 100%;
 }

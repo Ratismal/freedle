@@ -34,8 +34,12 @@ export default {
     openInfo () {
       this.$root.$emit('open:info');
     },
-    openStats () {
-      this.$root.$emit('open:stats');
+    openStats (event) {
+      if (event.ctrlKey) {
+        this.$root.$emit('open:stats-importer');
+      } else {
+        this.$root.$emit('open:stats');
+      }
     }
   }
 };
