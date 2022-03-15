@@ -119,12 +119,14 @@ export const actions = {
         }
       }
       for (let i = 0; i < 5; i++) {
-        if (cLetters.includes(letters[i])) {
-          cLetters[cLetters.indexOf(letters[i])] = '';
-          commit('setTileScore', { column: i, score: 'present' });
-          gradedPositions[i] = true;
-        } else if (!gradedPositions[i]) {
-          commit('setTileScore', { column: i, score: 'absent' });
+        if (!gradedPositions[i]) {
+          if (cLetters.includes(letters[i])) {
+            cLetters[cLetters.indexOf(letters[i])] = '';
+            commit('setTileScore', { column: i, score: 'present' });
+            gradedPositions[i] = true;
+          } else {
+            commit('setTileScore', { column: i, score: 'absent' });
+          }
         }
       }
       commit('increaseRow');
