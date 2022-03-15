@@ -66,8 +66,8 @@ export const mutations = {
     state.currentStreak = stats.currentStreak;
     state.maxStreak = stats.maxStreak;
     state.guesses = { ...stats.guesses };
-    state.lastScore = 0;
-    state.lastGame = 0;
+    state.lastScore = stats.lastScore || 0;
+    state.lastGame = stats.lastGame || 0;
   }
 };
 
