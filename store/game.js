@@ -90,7 +90,6 @@ export const actions = {
               if (c[j] === guess.guess) {
                 c[j] = '';
               } else {
-                console.log([...c], guess);
                 const types = ['st', 'nd', 'rd', 'th', 'th'];
                 letter = (j + 1) + types[j] + ' letter must be ' + guess.guess.toUpperCase();
               }
