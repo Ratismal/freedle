@@ -90,12 +90,23 @@ export const actions = {
               if (c[j] === guess.guess) {
                 c[j] = '';
               } else {
+                console.log([...c], guess);
                 const types = ['st', 'nd', 'rd', 'th', 'th'];
                 letter = (j + 1) + types[j] + ' letter must be ' + guess.guess.toUpperCase();
               }
             } else if (guess.score === 'present') {
               if (c.includes(guess.guess)) {
-                c[c.indexOf(guess.guess)] = '';
+                let index = 0;
+                while (true) {
+                  index = c.indexOf(guess.guess, index);
+                  if (c[index] === game.rows[i][index].guess) {
+                    index++;
+                    continue;
+                  } else {
+                    c[index] = '';
+                    break;
+                  }
+                }
               } else {
                 letter = 'Guess must contain ' + guess.guess.toUpperCase();
               }
