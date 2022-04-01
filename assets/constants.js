@@ -5,7 +5,9 @@ export const colors = {
   orange: '🟧',
   purple: '🟪',
   red: '🟥',
-  yellow: '🟨'
+  yellow: '🟨',
+  white: '⬜',
+  black: '⬛'
 };
 
 export const darkSquare = '⬛';

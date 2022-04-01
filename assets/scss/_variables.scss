@@ -45,6 +45,8 @@ $colors: (
   'purple': (#967bc2 #a486d4),
   'red': (#c05361 #d65e6e),
   'yellow': (#B59F3B #c9b458),
+  'black': (black, black),
+  'white': (white, white)
 );
 
 @each $name, $cs in $colors {
@@ -64,6 +66,33 @@ $colors: (
   }
 }
 
+$textColors: (
+  'white': black,
+  'black': white
+);
+
+@each $name, $color in $textColors {
+  .present-#{$name} {
+    .tile.present, .button, .keyboard-button.present {
+      color: $color;
+    }
+  }
+  .correct-#{$name} {
+    .tile.correct, .button.correct, .keyboard-button.correct, .guess-bar.current {
+      color: $color;
+    }
+  }
+  .light.present-#{$name} {
+    .tile.present, .button, .keyboard-button.present {
+      color: $color;
+    }
+  }
+  .light.correct-#{$name} {
+    .tile.correct, .button.correct, .keyboard-button.correct, .guess-bar.current {
+      color: $color;
+    }
+  }
+}
 .megathrob {
   --throb-duration: 2s;
   --throb-scale: 1.5;

@@ -139,7 +139,7 @@ export default {
         const line = guesses.join('');
         results.push(line);
 
-        if (line === correct.repeat(5)) {
+        if (row.every(guess => guess.score === 'correct')) {
           break;
         }
       }
