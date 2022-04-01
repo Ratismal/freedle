@@ -98,7 +98,9 @@ export const actions = {
                 let index = 0;
                 while (true) {
                   index = c.indexOf(guess.guess, index);
-                  if (c[index] === game.rows[i][index].guess) {
+                  if (index === -1) {
+                    break;
+                  } else if (c[index] === game.rows[i][index].guess) {
                     index++;
                     continue;
                   } else {
