@@ -57,6 +57,20 @@
       </div>
       <div class="settings-group">
         <div>
+          <span class="title">Repeated Color</span>
+          <span class="subtitle">When the guess isn't in the word, and has already been guessed</span>
+        </div>
+        <select v-model="settings.repeatedColor">
+          <option :value="null">
+            Blank
+          </option>
+          <option v-for="color, key in colors" :key="key" :value="key">
+            {{ color }} {{ key }}
+          </option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <div>
           <span class="title">Mention Freedle</span>
           <span class="subtitle">When on, mentions Freedle in the shared results instead of Wordle</span>
         </div>
@@ -194,6 +208,9 @@ export default {
       }
       if (this.settings.correctColor !== 'green') {
         classes.push('correct-' + this.settings.correctColor);
+      }
+      if (this.settings.repeatedColor !== null) {
+        classes.push('repeated-' + this.settings.repeatedColor);
       }
 
       if (this.settings.flipStyle) {

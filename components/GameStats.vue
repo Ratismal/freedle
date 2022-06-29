@@ -115,6 +115,11 @@ export default {
       if (this.settings.invertResultsTheme) {
         absent = absent === lightSquare ? darkSquare : lightSquare;
       }
+      let repeated = absent;
+      if (this.settings.repeatedColor) {
+        repeated = colors[this.settings.repeatedColor];
+      }
+
       const day = this.game.day;
 
       const results = [];
@@ -123,17 +128,17 @@ export default {
       results.push(`${name} ${day} ${this.stats.lastScore}/6${this.settings.hardMode ? '*' : ''}`);
       results.push('');
 
+      const colorMap = {
+        correct,
+        present,
+        repeated
+      };
+
       for (const row of this.game.rows) {
         const guesses = [];
 
         for (const guess of row) {
-          if (guess.score === 'correct') {
-            guesses.push(correct);
-          } else if (guess.score === 'present') {
-            guesses.push(present);
-          } else {
-            guesses.push(absent);
-          }
+          guesses.push(colorMap[guess.score] || absent);
         }
 
         const line = guesses.join('');
@@ -144,11 +149,19 @@ export default {
         }
       }
 
-      navigator.clipboard.writeText(results.join('\n'));
+      try {
+        navigator.clipboard.writeText(results.join('\n'));
 
-      this.addToast({
-        text: 'Copied results to clipboard'
-      });
+        this.addToast({
+          text: 'Copied results to clipboard'
+        });
+      } catch (err) {
+        console.log(results.join('\n'));
+
+        this.addToast({
+          text: 'Could not copy results, probably due to a local HTTP environment. Logged results to console instead.'
+        });
+      }
     }
   }
 };

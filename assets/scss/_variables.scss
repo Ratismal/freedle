@@ -16,6 +16,7 @@
   --color-text-post-guess: white;
   --color-empty: #121213;
   --color-absent: #3A3A3C;
+  --color-repeated: var(--color-absent);
   --color-present: #B59F3B;
   --color-correct: #538D4E;
   --color-key: #818384;
@@ -31,6 +32,7 @@
   --color-text-post-guess: white;
   --color-empty: white;
   --color-absent: #787c7e;
+  --color-repeated: var(--color-absent);
   --color-present: #c9b458;
   --color-correct: #6aaa64;
   --color-key: #D3D6DA;
@@ -58,11 +60,17 @@ $colors: (
   .correct-#{$name} {
     --color-correct: #{$dark};
   }
+  .repeated-#{$name} {
+    --color-repeated: #{$dark};
+  }
   .light.present-#{$name} {
     --color-present: #{$light};
   }
   .light.correct-#{$name} {
     --color-correct: #{$light};
+  }
+  .light.repeated-#{$name} {
+    --color-repeated: #{$dark};
   }
 }
 

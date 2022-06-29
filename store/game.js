@@ -137,7 +137,15 @@ export const actions = {
             commit('setTileScore', { column: i, score: 'present' });
             gradedPositions[i] = true;
           } else {
-            commit('setTileScore', { column: i, score: 'absent' });
+            let score = 'absent';
+            for (const row of game.rows.slice(0, game.currentRow)) {
+              for (const l of row) {
+                if (letters[i] === l.guess && ['absent', 'repeated'].includes(l.score)) {
+                  score = 'repeated';
+                }
+              }
+            }
+            commit('setTileScore', { column: i, score });
           }
         }
       }

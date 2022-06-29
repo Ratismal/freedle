@@ -7,10 +7,10 @@
       <game-row :row="3" />
       <game-row :row="4" />
       <game-row :row="5" />
-      <button v-if="dev" class="button" @click.prevent="reset">
-        Reset Today's Wordle
-      </button>
     </div>
+    <button v-if="dev" class="button reset" @click.prevent="reset">
+      Reset Today's Wordle
+    </button>
   </div>
 </template>
 
@@ -105,5 +105,10 @@ export default {
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
+}
+
+.button.reset {
+  max-width: 350px;
+  margin: 0 auto;
 }
 </style>

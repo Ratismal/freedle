@@ -19,17 +19,21 @@
   border: 2px solid var(--color-border-filled);
 }
 
-.tile.filled:not(.absent):not(.present):not(.correct):not(.appear):not(.disappear) {
+.tile.filled:not(.absent):not(.present):not(.correct):not(.repeated):not(.appear):not(.disappear) {
   animation: throb var(--throb-duration);
 }
 
-.tile.absent, .tile.present, .tile.correct {
+.tile.absent, .tile.present, .tile.correct, .tile.repeated {
   color: var(--color-text-post-guess);
   border: none;
 }
 
 .tile.absent {
   background: var(--color-absent);
+}
+
+.tile.repeated {
+  background: var(--color-repeated);
 }
 
 .tile.present {
