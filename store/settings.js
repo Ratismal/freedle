@@ -5,6 +5,7 @@ export const state = () => ({
     presentColor: 'yellow',
     correctColor: 'green',
     repeatedColor: null,
+    shareRepeats: true,
     hardMode: false,
     golf: false,
     niceCock: false,

@@ -116,7 +116,7 @@ export default {
         absent = absent === lightSquare ? darkSquare : lightSquare;
       }
       let repeated = absent;
-      if (this.settings.repeatedColor) {
+      if (this.settings.repeatedColor && this.settings.shareRepeats) {
         repeated = colors[this.settings.repeatedColor];
       }
 

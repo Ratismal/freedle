@@ -69,6 +69,16 @@
           </option>
         </select>
       </div>
+      <div v-if="settings.repeatedColor !== null" class="settings-group">
+        <div>
+          <span class="title">Share Repeats</span>
+          <span class="subtitle">When on, includes the repeat color in your copied results</span>
+        </div>
+        <label>
+          <input v-model="settings.shareRepeats" class="input" type="checkbox">
+          <div class="toggle-wrapper"><span class="selector" /></div>
+        </label>
+      </div>
       <div class="settings-group">
         <div>
           <span class="title">Mention Freedle</span>
